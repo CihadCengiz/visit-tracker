@@ -68,17 +68,43 @@ App runs on <http://localhost:3000>
 The API needs a running Redis instance on **localhost:6379**.  
 Pick whichever setup is easier for you:
 
-| Option&nbsp; | Command |
-|--------------|---------|
-| **Docker&nbsp;(recommended)** | ```bash\n# start in background\ndocker run --name redis -p 6379:6379 -d redis:7-alpine\n``` |
-| **Docker Compose** (if you’re using the project compose file) | ```bash\ndocker compose up -d redis   # starts only the redis service\n``` |
-| **Homebrew (macOS)** | ```bash\nbrew install redis\nbrew services start redis\n``` |
-| **Chocolatey (Windows)** | ```powershell\nchoco install redis-64\nStart-Service redis\n``` |
+| Option | One-line command |
+|--------|------------------|
+| **Docker (recommended)** | `docker run -d --name redis -p 6379:6379 redis:7-alpine` |
+| **Docker Compose** (uses this repo’s compose file) | `docker compose up -d redis` |
+| **Homebrew (macOS)** | `brew services start redis` |
+| **Chocolatey (Windows)** | `Start-Service redis` |
 
-> Check it’s live:
+<details>
+<summary>Full copy-paste snippets</summary>
 
 ```bash
-redis-cli ping          # → PONG
+# Docker (run in background, AOF disabled for brevity)
+docker run -d --name redis -p 6379:6379 redis:7-alpine
+```
+
+```bash
+# Docker Compose (only the redis service)
+docker compose up -d redis
+```
+
+```bash
+# macOS Homebrew (installs & starts service)
+brew install redis
+brew services start redis
+```
+
+```powershell
+# Windows Chocolatey
+choco install redis-64
+Start-Service redis
+```
+</details>
+
+**Check it’s reachable:**
+
+```bash
+redis-cli -h 127.0.0.1 -p 6379 ping   # → PONG
 ```
 
 ---
