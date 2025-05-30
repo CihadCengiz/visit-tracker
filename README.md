@@ -38,6 +38,7 @@ GET  /api/getCountryStats      → { "us": 12, "de": 7 }
 #### Environment Variables
 
 - Copy or edit `.env.local` in `/frontend`:
+  
   ```
   NEXT_PUBLIC_API_URL=http://localhost:3001
   ```
