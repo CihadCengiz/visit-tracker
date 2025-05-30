@@ -70,10 +70,10 @@ Pick whichever setup is easier for you:
 
 | option                                                           | command                                                                                     |
 | ---------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| **Docker** (recommended)                                         | ```bash\n# start in background\ndocker run --name redis -p 6379:6379 -d redis:7-alpine\n``` |
-| **Docker-Compose** (if you already use the project compose file) | ```bash\ndocker compose up -d redis   # starts only the redis service\n```                  |
-| **Homebrew (macOS)**                                             | ```bash\nbrew install redis\nbrew services start redis\n```                                 |
-| **Chocolatey (Windows)**                                         | ```powershell\nchoco install redis-64\nStart-Service redis\n```                             |
+| **Docker** (recommended)                                         | ```bash # start in background\ndocker run --name redis -p 6379:6379 -d redis:7-alpine\n``` |
+| **Docker-Compose** (if you already use the project compose file) | ```bash docker compose up -d redis   # starts only the redis service\n```                  |
+| **Homebrew (macOS)**                                             | ```bash brew install redis\nbrew services start redis\n```                                 |
+| **Chocolatey (Windows)**                                         | ```powershell choco install redis-64\nStart-Service redis\n```                             |
 
 > Check it’s live:
 
